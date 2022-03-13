@@ -69,7 +69,7 @@ function init() {
         }
 
         grid.innerHTML = ""
-
+        popup.innerHTML = ""
 
     }
 
@@ -98,7 +98,7 @@ function init() {
         if (e.target.id === "sort") {
             sortRecords(e)
         }
-
+        popup.innerHTML = ""
     }
 
     function filterGenre(e) {
@@ -169,7 +169,7 @@ function init() {
 
     }
 
-    // Deixei aqui os botões de next e previous, mesmo não estando a funcioniar, precisamente porque não consegui pô-los a funcionar. Parece-me que o problema está em como eu perco qualquer referência ao modelo de dados assim que entro no Popup, e por isso não consigo aceder ao próximo nem anterior na array. Provavelmente o problema está em passar tudo como data-set? Parece que aqui os states e props do react teriam ajudado
+
 
     function handlePopup(e) {
         if (e.target.value === undefined) {
@@ -180,7 +180,7 @@ function init() {
         } else if (e.target.innerHTML.includes('Previous')) {
             console.log('previous')
         }
-
+        // Deixei aqui os botões de next e previous, mesmo não estando a funcioniar, precisamente porque não consegui pô-los a funcionar. Parece-me que o problema está em como eu perco qualquer referência ao modelo de dados assim que entro no Popup, e por isso não consigo aceder ao próximo nem anterior na array. Provavelmente o problema está em passar tudo como data-set? 
     }
 
     function showAlbum(e) {
