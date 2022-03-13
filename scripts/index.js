@@ -9,6 +9,10 @@ function init() {
     head.addEventListener('click', gridEvents, false)
     let filters = document.getElementById('filters')
     filters.addEventListener('change', filterEvents, false)
+    let popup = document.getElementById('popup')
+    popup.addEventListener('click', hideAlbum, false)
+
+
 
     fetch('data.json')
         .then(r => r.json())
@@ -33,7 +37,7 @@ function init() {
     }
 
     function gridEvents(e) {
-        console.log(e.target.id);
+
         if (e.target.id === 'gridItemRec') {
             viewRecords(records)
 
@@ -43,6 +47,9 @@ function init() {
         }
         if (e.target.id === 'header') {
             initView()
+        }
+        if (e.target.id.includes('albumCover')) {
+            showAlbum(e)
         }
     }
 
@@ -124,12 +131,27 @@ function init() {
 
     }
 
+    function hideAlbum() {
+        popup.innerHTML = ""
+        viewRecords(records)
+    }
+    function showAlbum(e) {
+        let { artist, title, cover, year } = e.target.dataset
+        grid.innerHTML = ""
+        popup.innerHTML += `
+        <img src="resources/records/${cover}" />
+        <h2>${title}</h2>
+        <h3>${artist}</h3>
+        <h4>${year}</h4>`
+        console.log(artist, title, cover);
+
+    }
     function viewRecords(records) {
         grid.innerHTML = ""
         filters.classList.remove('hide')
         records.map((record) => {
             grid.innerHTML += `
-            <img class="albumCover" id="albumCover${record.id}" src="resources/records/${record.cover}"/> 
+            <img class="albumCover" id="albumCover${record.id}" data-cover="${record.cover}" data-title="${record.title}" data-artist="${record.artist}" data-year="${record.year}"  src="resources/records/${record.cover}"/> 
         `
         })
 

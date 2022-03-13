@@ -101,8 +101,25 @@ img.albumCover{
 img.albumCover:hover{
     transition: .3s;
     filter: none;
-    border: 5px solid var(--cadet) ;
+    border: 5px solid var(--wild-blue-yonder) ;
     width: 205px;
     height: 205px;
     border-radius: 10px;
+}
+
+div.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+div.popup img {
+    width: 50vw;
+    height: auto;
 }
