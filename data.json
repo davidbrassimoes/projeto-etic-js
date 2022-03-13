@@ -1,0 +1,228 @@
+{
+    "records": [
+        {
+            "id": 0,
+            "title": "Electric Ladyland",
+            "artist": "Jimi Hendrix",
+            "genre": "Rock",
+            "year": 1968,
+            "cover": "Electric_Ladyland.jpg"
+        },
+        {
+            "id": 1,
+            "title": "A Love Supreme",
+            "artist": "John Coltrane",
+            "genre": "Jazz",
+            "year": 1965,
+            "cover": "A_Love_Supreme.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Rated R",
+            "artist": "Queens Of The Stone Age",
+            "genre": "Rock",
+            "year": 2000,
+            "cover": "Rated_R.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Welcome To Sky Valley",
+            "artist": "Kyuss",
+            "genre": "Rock",
+            "year": 1994,
+            "cover": "Welcome_to_Sky_Valley.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Music Is Rotted One Note",
+            "artist": "Squarepusher",
+            "genre": "Electronic, Jazz",
+            "year": 1998,
+            "cover": "Music_Is_Rotted_One_Note.jpg"
+        },
+        {
+            "id": 5,
+            "title": "The Campfire Headphase",
+            "artist": "Boards Of Canada",
+            "genre": "Electronic",
+            "year": 2005,
+            "cover": "The_Campfire_Headphase.jpg"
+        },
+        {
+            "id": 6,
+            "title": "One Flight Up",
+            "artist": "Dexter Gordon",
+            "genre": "Jazz",
+            "year": 1964,
+            "cover": "One_Flight_Up.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Tiny Music... Songs from the Vatican Gift Shop",
+            "artist": "Stone Temple Pilots",
+            "genre": "Rock",
+            "year": 1996,
+            "cover": "Tiny_Music.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Blackstar",
+            "artist": "David Bowie",
+            "genre": "Electronic, Jazz, Rock",
+            "year": 2016,
+            "cover": "Blackstar.jpg"
+        },
+        {
+            "id": 9,
+            "title": "In Rainbows",
+            "artist": "Radiohead",
+            "genre": "Electronic, Rock",
+            "year": 2007,
+            "cover": "In_Rainbows.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Physical Graffiti",
+            "artist": "Led Zeppelin",
+            "genre": "Rock",
+            "year": 1975,
+            "cover": "Physical_Graffiti.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Volume Two",
+            "artist": "Soft Machine",
+            "genre": "Jazz, Rock",
+            "year": 1969,
+            "cover": "Soft_Machine_Two.jpg"
+        },
+        {
+            "id": 12,
+            "title": "Santana",
+            "artist": "Santana",
+            "genre": "Rock",
+            "year": 1969,
+            "cover": "Santana.jpg"
+        },
+        {
+            "id": 13,
+            "title": "Youth Of America",
+            "artist": "Wipers",
+            "genre": "Rock",
+            "year": 1981,
+            "cover": "Youth_Of_America.jpg"
+        },
+        {
+            "id": 14,
+            "title": "Washing Machine",
+            "artist": "Soft Machine",
+            "genre": "Rock",
+            "year": 1995,
+            "cover": "Washing_Machine.jpg"
+        },
+        {
+            "id": 15,
+            "title": "Red",
+            "artist": "King Crimson",
+            "genre": "Rock",
+            "year": 1974,
+            "cover": "Red.jpg"
+        },
+        {
+            "id": 16,
+            "title": "Blue Matter",
+            "artist": "John Scofield",
+            "genre": "Jazz, Rock",
+            "year": 1986,
+            "cover": "Blue_Matter.jpg"
+        },
+        {
+            "id": 17,
+            "title": "The Remedy",
+            "artist": "Kurt Rosenwinkel",
+            "genre": "Jazz",
+            "year": 2008,
+            "cover": "The_Remedy.jpg"
+        },
+        {
+            "id": 18,
+            "title": "Bud Powell's Moods",
+            "artist": "Bud Powell",
+            "genre": "Jazz",
+            "year": 1956,
+            "cover": "Moods.jpg"
+        },
+        {
+            "id": 19,
+            "title": "Take Love Easy",
+            "artist": "Ella Fitzgerald",
+            "genre": "Jazz",
+            "year": 1974,
+            "cover": "Take_Love_Easy.jpg"
+        },
+        {
+            "id": 20,
+            "title": "Relaxin'",
+            "artist": "Miles Davis",
+            "genre": "Jazz",
+            "year": 1958,
+            "cover": "Relaxin.jpg"
+        },
+        {
+            "id": 21,
+            "title": "Zuma",
+            "artist": "Neil Young",
+            "genre": "Rock",
+            "year": 1975,
+            "cover": "Zuma.jpg"
+        },
+        {
+            "id": 22,
+            "title": "Down On The Upside",
+            "artist": "Soundgarden",
+            "genre": "Rock",
+            "year": 1996,
+            "cover": "Down_On_The_Upside.jpg"
+        },
+        {
+            "id": 23,
+            "title": "Facelift",
+            "artist": "Alice In Chains",
+            "genre": "Rock",
+            "year": 1990,
+            "cover": "Facelift.jpg"
+        },
+        {
+            "id": 24,
+            "title": "Bricolage",
+            "artist": "Amon Tobin",
+            "genre": "Electronic, Jazz",
+            "year": 1997,
+            "cover": "Bricolage.jpg"
+        },
+        {
+            "id": 25,
+            "title": "Drukqs",
+            "artist": "Aphex Twin",
+            "genre": "Electronic",
+            "year": 2001,
+            "cover": "Drukqs.jpg"
+        },
+        {
+            "id": 26,
+            "title": "Cosmogramma",
+            "artist": "Flying Lotus",
+            "genre": "Electronic, Jazz",
+            "year": 2010,
+            "cover": "Cosmogramma.jpg"
+        },
+        {
+            "id": 27,
+            "title": "Light As A Feather",
+            "artist": "Return To Forever",
+            "genre": "Jazz, Rock",
+            "year": 1972,
+            "cover": "Light_As_A_Feather.jpg"
+        }
+    ]
+}

@@ -34,50 +34,72 @@ body {
 
 header.header {
     background-color: var(--gunmetal);
-    color: var(--snow);
+    color: var(--gunmetal);
     text-align: center;
     padding: 25px;
     border-bottom: 3px solid black;
-    height: 15vh;
+    height: 120px;
 }
 
 header.header:hover {
     transition: 1s;
-    height: 22.5vh;
     background-color: var(--gunmetal);
-    color: white;
+    color: snow;
     border-bottom: .3px solid black;
 
 }
 
+header.header h1{
+    color: var(--snow);
+}
 .gridContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 5vw 20vw;
+    margin: 5vw;
 }
-
 .grid {
     display: grid;
-    grid-template-columns: 3fr 3fr 3fr;
-    gap: 10px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
+    gap: 10px;
+    padding: 10px;
 }
+
+
 
 article.gridItem {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 10rem;
-    height: 10rem;
+    /* width: 250px;
+    height: 250px; */
     background-color: var(--pewter-blue);
+    border: 10px solid var(--gunmetal);
 }
 
 article.gridItem:hover{
-    width: 11rem;
-    height: 11rem;
     border-radius: 10px;
     transition: 1s;
     background-color: var(--denim);
     color: white;
+    border: 10px solid var(--aquamarine);
+    font-size: larger;
+}
+.hide {
+    display: none;
+}
 
+img.albumCover{
+    filter: grayscale(100%);
+     width: 200px;
+    height: 200px;
+}
+img.albumCover:hover{
+    transition: .3s;
+    filter: none;
+    border: 5px solid var(--cadet) ;
+    width: 205px;
+    height: 205px;
+    border-radius: 10px;
 }
