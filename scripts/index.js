@@ -10,8 +10,9 @@ function init() {
     let filters = document.getElementById('filters')
     filters.addEventListener('change', filterEvents, false)
     let popup = document.getElementById('popup')
-    popup.addEventListener('click', hideAlbum, false)
+    popup.addEventListener('click', handlePopup, false)
     let weather = document.getElementById('weather')
+
 
 
 
@@ -29,6 +30,7 @@ function init() {
 
         filters.classList.add('hide')
         weather.innerHTML = ""
+        popup.innerHTML = ""
     }
 
     initView()
@@ -46,8 +48,6 @@ function init() {
             const d = new Date()
 
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=12114b48246bfd9ec259f916b17748fc`).then(r => r.json()).then(data => {
-
-                console.log(data);
                 weather.innerHTML = `
                     <h1>Location: ${data.name} </h1>
                     <br/>
@@ -88,6 +88,7 @@ function init() {
         if (e.target.id.includes('albumCover')) {
             showAlbum(e)
         }
+
     }
 
     function filterEvents(e) {
@@ -168,12 +169,22 @@ function init() {
 
     }
 
-    function hideAlbum() {
-        popup.innerHTML = ""
-        viewRecords(records)
+    // Deixei aqui os botões de next e previous, mesmo não estando a funcioniar, precisamente porque não consegui pô-los a funcionar. Parece-me que o problema está em como eu perco qualquer referência ao modelo de dados assim que entro no Popup, e por isso não consigo aceder ao próximo nem anterior na array. Provavelmente o problema está em passar tudo como data-set? Parece que aqui os states e props do react teriam ajudado
+
+    function handlePopup(e) {
+        if (e.target.value === undefined) {
+            popup.innerHTML = ""
+            viewRecords(records)
+        } else if (e.target.innerHTML.includes('Next')) {
+            console.log('next')
+        } else if (e.target.innerHTML.includes('Previous')) {
+            console.log('previous')
+        }
+
     }
+
     function showAlbum(e) {
-        let { artist, title, cover, year, genre } = e.target.dataset
+        let { artist, title, cover, year, genre, id } = e.target.dataset
         grid.innerHTML = ""
         popup.innerHTML += `
         <img src="resources/records/${cover}" />
@@ -181,9 +192,14 @@ function init() {
         <h3>${artist}</h3>
         <h4>${year}</h4>
         <h4>${genre}</h4>
+        <div>
+        <button>Previous</button>
+        <button>Next</button>
+        </div>
         `
-
     }
+
+
     function viewRecords(records) {
         grid.innerHTML = ""
         filters.classList.remove('hide')
