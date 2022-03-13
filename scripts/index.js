@@ -4,6 +4,7 @@ function init() {
 
 
     let grid = document.getElementById('grid')
+    grid.addEventListener('click', gridEvents, false)
     let head = document.getElementById('header')
     head.addEventListener('click', gridEvents, false)
     let filters = document.getElementById('filters')
@@ -22,24 +23,17 @@ function init() {
 
         filters.classList.add('hide')
 
-        let rec = document.getElementById('gridItemRec')
-        rec.addEventListener('click', gridEvents, false)
-        let loc = document.getElementById('gridItemLoc')
-        loc.addEventListener('click', gridEvents, false)
     }
 
     initView()
 
-    let rec = document.getElementById('gridItemRec')
-    rec.addEventListener('click', gridEvents, false)
-    let loc = document.getElementById('gridItemLoc')
-    loc.addEventListener('click', gridEvents, false)
 
     function showLocation() {
         grid.innerHTML = ""
     }
 
     function gridEvents(e) {
+        console.log(e.target.id);
         if (e.target.id === 'gridItemRec') {
             viewRecords(records)
 
@@ -57,7 +51,7 @@ function init() {
             filterGenre(e)
         }
         if (e.target.id === "sort") {
-
+            sortRecords(e)
         }
 
     }
@@ -70,6 +64,62 @@ function init() {
 
         } else {
             viewRecords(records)
+        }
+
+    }
+
+    function sortRecords(e) {
+        if (e.target.value === "yearUp") {
+            let newRecords = records.sort(function (a, b) {
+                if (a.year > b.year) {
+                    return 1;
+                }
+                if (a.year < b.year) {
+                    return -1;
+                }
+                // a must be equal to b
+                return 0;
+            });
+            viewRecords(newRecords)
+        }
+        if (e.target.value === "yearDown") {
+            let newRecords = records.sort(function (a, b) {
+                if (a.year > b.year) {
+                    return -1;
+                }
+                if (a.year < b.year) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            });
+            viewRecords(newRecords)
+        }
+        if (e.target.value === "artistUp") {
+            let newRecords = records.sort(function (a, b) {
+                if (a.artist > b.artist) {
+                    return 1;
+                }
+                if (a.artist < b.artist) {
+                    return -1;
+                }
+                // a must be equal to b
+                return 0;
+            });
+            viewRecords(newRecords)
+        }
+        if (e.target.value === "artistDown") {
+            let newRecords = records.sort(function (a, b) {
+                if (a.artist > b.artist) {
+                    return -1;
+                }
+                if (a.artist < b.artist) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            });
+            viewRecords(newRecords)
         }
 
     }
