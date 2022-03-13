@@ -123,6 +123,22 @@ div.popup img {
     height: auto;
 }
 
+div.popup button {
+    width: 100px;
+    height: 30px;
+    color: var(--snow);
+    background-color: var(--denim);
+    border-radius: 5px;
+
+}
+div.popup button:hover {
+    width: 102px;
+    height: 32px;
+    color: var(--gunmetal);
+    background-color: var(--aquamarine);
+    transition: .5s;
+}
+
 div.weather {
     display: flex;
     flex-direction: column;
