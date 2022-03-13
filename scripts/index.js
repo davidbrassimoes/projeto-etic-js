@@ -11,6 +11,8 @@ function init() {
     filters.addEventListener('change', filterEvents, false)
     let popup = document.getElementById('popup')
     popup.addEventListener('click', hideAlbum, false)
+    let weather = document.getElementById('weather')
+
 
 
 
@@ -26,14 +28,49 @@ function init() {
             `
 
         filters.classList.add('hide')
-
+        weather.innerHTML = ""
     }
 
     initView()
 
 
     function showLocation() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(sucesso, erro);
+        } else {
+            alert('no geolocation available');
+        }
+
+        function sucesso(position) {
+
+            const d = new Date()
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=12114b48246bfd9ec259f916b17748fc`).then(r => r.json()).then(data => {
+
+                console.log(data);
+                weather.innerHTML = `
+                    <h1>Location: ${data.name} </h1>
+                    <br/>
+                    <p>Temperature: ${Math.round(data.main.temp - 273.15)}º Celsius </p>
+                    <p>Feels Like: ${Math.round(data.main.feels_like - 273.15)}º Celsius</p>
+                    <p>Humidity: ${data.main.humidity} %</p>
+                    <p>Weather Description: ${data.weather[0].description} </p>
+                    <p>Time: ${d.getHours()}h${d.getMinutes()}m </p>
+                    <br/>
+                    <h4><i>Maybe Try Spotify?</i></h4>
+                `
+            })
+
+
+
+        }
+        function erro(err) {
+            console.log('ocorreu um erro');
+        }
+
         grid.innerHTML = ""
+
+
     }
 
     function gridEvents(e) {
@@ -136,14 +173,15 @@ function init() {
         viewRecords(records)
     }
     function showAlbum(e) {
-        let { artist, title, cover, year } = e.target.dataset
+        let { artist, title, cover, year, genre } = e.target.dataset
         grid.innerHTML = ""
         popup.innerHTML += `
         <img src="resources/records/${cover}" />
         <h2>${title}</h2>
         <h3>${artist}</h3>
-        <h4>${year}</h4>`
-        console.log(artist, title, cover);
+        <h4>${year}</h4>
+        <h4>${genre}</h4>
+        `
 
     }
     function viewRecords(records) {
@@ -151,7 +189,7 @@ function init() {
         filters.classList.remove('hide')
         records.map((record) => {
             grid.innerHTML += `
-            <img class="albumCover" id="albumCover${record.id}" data-cover="${record.cover}" data-title="${record.title}" data-artist="${record.artist}" data-year="${record.year}"  src="resources/records/${record.cover}"/> 
+            <img class="albumCover" id="albumCover${record.id}" data-cover="${record.cover}" data-title="${record.title}" data-artist="${record.artist}" data-year="${record.year}" data-genre="${record.genre}" src="resources/records/${record.cover}"/> 
         `
         })
 
