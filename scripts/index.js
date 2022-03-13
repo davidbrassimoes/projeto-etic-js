@@ -6,6 +6,8 @@ function init() {
     let grid = document.getElementById('grid')
     let head = document.getElementById('header')
     head.addEventListener('click', gridEvents, false)
+    let filters = document.getElementById('filters')
+    filters.addEventListener('change', filterEvents, false)
 
     fetch('data.json')
         .then(r => r.json())
@@ -17,6 +19,8 @@ function init() {
             <article class="gridItem" id="gridItemRec">Discos Favoritos</article>
             <article class="gridItem" id="gridItemLoc">Onde Ouvir?</article>
             `
+
+        filters.classList.add('hide')
 
         let rec = document.getElementById('gridItemRec')
         rec.addEventListener('click', gridEvents, false)
@@ -48,10 +52,31 @@ function init() {
         }
     }
 
+    function filterEvents(e) {
+        if (e.target.id === "genre") {
+            filterGenre(e)
+        }
+        if (e.target.id === "sort") {
+
+        }
+
+    }
+
+    function filterGenre(e) {
+
+        if (e.target.value !== 'All') {
+            let newRecords = records.filter(record => record.genre.includes(e.target.value))
+            viewRecords(newRecords)
+
+        } else {
+            viewRecords(records)
+        }
+
+    }
 
     function viewRecords(records) {
         grid.innerHTML = ""
-
+        filters.classList.remove('hide')
         records.map((record) => {
             grid.innerHTML += `
             <img class="albumCover" id="albumCover${record.id}" src="resources/records/${record.cover}"/> 

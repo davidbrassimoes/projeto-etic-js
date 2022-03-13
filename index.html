@@ -16,7 +16,21 @@
         <br />
         David Simões 2022 WebDev ETIC
     </header>
-    <section class="filters" id="filters">
+    <section class="filters hide" id="filters">
+        <label for="genre">Genre</label>
+        <select name="genre" id="genre">
+            <option value="All">All</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Rock">Rock</option>
+        </select>
+        <label for="sort">Sort by</label>
+        <select name="sort" id="sort">
+            <option value="yearUp">Year ascending</option>
+            <option value="yearDown">Year descending</option>
+            <option value="artistUp">Artist A-Z</option>
+            <option value="artistDown">Artist Z-A</option>
+        </select>
     </section>
     <section class="grid" id="grid">
     </section>
